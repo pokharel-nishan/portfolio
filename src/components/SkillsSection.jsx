@@ -1,88 +1,81 @@
-import { useState } from "react";
-import { cn } from "@/lib/utils";
+import { Database, Globe, Layout, Server, Terminal, Wrench } from "lucide-react";
 
-const skills = [
-  // Frontend
-  { name: "React.js", level: 90, category: "frontend" },
-  { name: "JavaScript", level: 95, category: "frontend" },
-  { name: "TypeScript", level: 90, category: "frontend" },
-  { name: "Material UI", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 85, category: "frontend" },
-  { name: "HTML/CSS", level: 90, category: "frontend" },
-
-  // Backend
-  { name: "Node.js", level: 95, category: "backend" },
-  { name: "Express.js", level: 90, category: "backend" },
-  { name: "Nest.js", level: 85, category: "backend" },
-  { name: "FastAPI", level: 80, category: "backend" },
-  { name: "GraphQL", level: 85, category: "backend" },
-  { name: "REST APIs", level: 90, category: "backend" },
-  { name: "gRPC", level: 80, category: "backend" },
-
-  // Database & Tools
-  { name: "PostgreSQL", level: 85, category: "tools" },
-  { name: "MongoDB", level: 85, category: "tools" },
-  { name: "Docker", level: 80, category: "tools" },
-  { name: "AWS S3", level: 85, category: "tools" },
-  { name: "Git/GitHub", level: 90, category: "tools" },
+const skillCategories = [
+	{
+		name: "Frontend",
+		icon: <Layout className="w-5 h-5" />,
+		skills: [
+			"React.js",
+			"TypeScript",
+			"JavaScript",
+			"Material UI",
+			"Tailwind CSS",
+			"HTML5/CSS3",
+		],
+	},
+	{
+		name: "Backend",
+		icon: <Server className="w-5 h-5" />,
+		skills: ["Node.js", "Express.js", "Nest.js", "FastAPI", "Python"],
+	},
+	{
+		name: "APIs & Protocols",
+		icon: <Globe className="w-5 h-5" />,
+		skills: ["REST APIs", "GraphQL", "gRPC", "WebSocket"],
+	},
+	{
+		name: "Databases",
+		icon: <Database className="w-5 h-5" />,
+		skills: ["PostgreSQL", "MongoDB", "MySQL", "SQLite", "Oracle SQL"],
+	},
+	{
+		name: "DevOps & Tools",
+		icon: <Wrench className="w-5 h-5" />,
+		skills: ["Git", "GitHub", "GitLab", "Docker", "AWS S3"],
+	},
+	{
+		name: "Development Tools",
+		icon: <Terminal className="w-5 h-5" />,
+		skills: ["VS Code", "Swagger", "Strapi", "Trello", "Wrike"],
+	},
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
-
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+	return (
+		<section id="skills" className="py-24 px-4 relative bg-secondary/30">
+			<div className="container mx-auto max-w-5xl">
+				<h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+					Skills &{" "}
+					<span className="text-primary">Technologies</span>
+				</h2>
 
-  const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
-  );
-  return (
-    <section id="skills" className="py-24 px-4 relative bg-secondary/30">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary">Skills</span>
-        </h2>
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					{skillCategories.map((category, idx) => (
+						<div
+							key={idx}
+							className="bg-card p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
+						>
+							<div className="flex items-center gap-3 mb-4">
+								<div className="p-2 rounded-lg bg-primary/10 text-primary">
+									{category.icon}
+								</div>
+								<h3 className="text-lg font-semibold">{category.name}</h3>
+							</div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category, key) => (
-            <button
-              key={key}
-              onClick={() => setActiveCategory(category)}
-              className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
-                activeCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-foreground hover:bg-secondary"
-              )}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSkills.map((skill, key) => (
-            <div
-              key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
-            >
-              <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg">{skill.name}</h3>
-              </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: skill.level + "%" }}
-                />
-              </div>
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+							<div className="flex flex-wrap gap-2">
+								{category.skills.map((skill, index) => (
+									<span
+										key={index}
+										className="px-3 py-1 text-sm rounded-full bg-secondary/50 text-foreground/80 hover:bg-primary/10 hover:text-primary transition-colors duration-300"
+									>
+										{skill}
+									</span>
+								))}
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	);
 };
