@@ -209,9 +209,7 @@ export const ContactSection = () => {
             <div className="mt-8 p-6 bg-card rounded-lg shadow-sm">
               <h4 className="font-medium mb-2">Availability</h4>
               <p className="text-muted-foreground">
-                I&apos;m currently open to freelance projects and full-time
-                opportunities. Feel free to reach out for collaboration or just
-                to say hello!
+                Feel free to reach out for collaboration or just to say hello!
               </p>
             </div>
           </div>
