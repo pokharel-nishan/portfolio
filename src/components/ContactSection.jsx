@@ -86,26 +86,26 @@ export const ContactSection = () => {
                 ))}
               </div>
 
-              <div className="mt-8">
+              <div className="mt-8 text-center">
                 <h4 className="text-sm font-medium text-muted-foreground mb-4">
                   Connect With Me
                 </h4>
-                <div className="flex space-x-4">
+                <div className="flex justify-center space-x-6">
                   <a
                     href="https://linkedin.com/in/nishan-pokharel"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                    className="p-4 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-all hover:scale-110"
                   >
-                    <Linkedin className="h-5 w-5" />
+                    <Linkedin className="h-6 w-6" />
                   </a>
                   <a
                     href="https://github.com/pokharel-nishan"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                    className="p-4 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-all hover:scale-110"
                   >
-                    <Github className="h-5 w-5" />
+                    <Github className="h-6 w-6" />
                   </a>
                 </div>
               </div>
