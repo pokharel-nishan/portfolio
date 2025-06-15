@@ -58,7 +58,10 @@ export const WorkExperienceSection = () => {
     <section className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Work <span className="text-primary">Experience</span>
+          Work{" "}
+          <span className="text-primary" style={{ fontWeight: "inherit" }}>
+            Experience
+          </span>
         </h2>
 
         <div className="relative space-y-8">
@@ -72,7 +75,7 @@ export const WorkExperienceSection = () => {
 
               <div className="md:ml-16 bg-card p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                  <div>
+                  <div className="text-left">
                     <h3 className="text-xl font-semibold text-primary flex items-center gap-2">
                       <Briefcase className="w-5 h-5" />
                       {experience.title}
@@ -93,9 +96,9 @@ export const WorkExperienceSection = () => {
                   </div>
                 </div>
 
-                <ul className="list-disc list-inside space-y-2 text-foreground/80 mb-4">
+                <ul className="space-y-2 text-foreground/80 mb-4 ml-4 text-left">
                   {experience.description.map((item, index) => (
-                    <li key={index} className="pl-2">
+                    <li key={index} className="list-disc list-outside">
                       {item}
                     </li>
                   ))}
