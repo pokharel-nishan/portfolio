@@ -1,6 +1,18 @@
-import { ArrowDown } from "lucide-react";
+import { useState } from "react";
 
 export const HeroSection = () => {
+  const [blast, setBlast] = useState(false);
+  const [showRocket, setShowRocket] = useState(true);
+
+  const handleRocketClick = () => {
+    setShowRocket(false);
+    setBlast(true);
+    setTimeout(() => {
+      setBlast(false);
+      setShowRocket(true);
+    }, 900); 
+  };
+
   return (
     <section
       id="hero"
@@ -40,9 +52,25 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-        <span className="text-sm text-muted-foreground mb-2">Scroll</span>
-        <ArrowDown className="h-5 w-5 text-primary" />
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center select-none">
+        {showRocket && (
+          <span
+            className="text-4xl animate-float-rocket cursor-pointer transition-opacity duration-300"
+            onClick={handleRocketClick}
+            style={{ opacity: showRocket ? 1 : 0 }}
+            title="Blast off!"
+          >
+            🚀
+          </span>
+        )}
+        {blast && (
+          <span className="rocket-blast" role="img" aria-label="blast">
+            🔥
+          </span>
+        )}
+        <span className="text-xs text-muted-foreground mt-2 opacity-80 animate-fade-in-delay-5">
+          Click for fun, Scroll for the journey!
+        </span>
       </div>
     </section>
   );
