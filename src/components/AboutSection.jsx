@@ -78,7 +78,7 @@ export const AboutSection = () => {
           <div className="lg:col-span-5 space-y-6">
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-card p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
-                <h4 className="text-4xl font-bold text-primary mb-2">1.5+</h4>
+                <h4 className="text-4xl font-bold text-primary mb-2">2+</h4>
                 <p className="text-sm text-foreground/80">
                   Years of Coding Experience
                 </p>
