@@ -127,8 +127,8 @@ const skillCategories = [
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
       },
       {
-        name: "AWS S3",
-        icon: "https://cdn.jsdelivr.net/npm/aws-icons@latest/icons/resource/AmazonSimpleStorageServiceBucket.svg",
+        name: "AWS",
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/amazonaws.svg",
       },
     ],
   },
