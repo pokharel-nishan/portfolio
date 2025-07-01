@@ -13,30 +13,39 @@ const projects = {
       id: 1,
       title: "MySecondTeacher",
       description:
-        "Educational platform with advanced features including nested bucket management for exam questions and bulk data processing capabilities.",
-      image: "/projects/project2.png",
-      tags: ["React", "Node.js", "GraphQL", "gRPC", "Material UI"],
-      demoUrl: "#",
+        "Educational platform focused on revolutionizing digital academic space. ",
+      image: "/projects/mst.png",
+      tags: [
+        "React",
+        "Node.js",
+        "Koa",
+        "PostgreSQL",
+        "GraphQL",
+        "gRPC",
+        "Rest API",
+        "Material UI",
+      ],
+      demoUrl: "https://mysecondteacher.com.np/",
       company: "Innovate Tech",
     },
     {
       id: 2,
-      title: "Testpaper",
+      title: "Jelajah Ilmu",
       description:
-        "Google Drive-like system for resource management with nested folders, file sharing, and access control using AWS S3.",
-      image: "/projects/project3.png",
+        "Educational platform focused on bahasa language and targeting global user base.",
+      image: "/projects/jelajah.png",
       tags: ["Node.js", "MongoDB", "AWS S3", "Express.js", "React"],
-      demoUrl: "#",
+      demoUrl: "https://app.jelajahilmu.com/",
       company: "Innovate Tech",
     },
     {
       id: 3,
       title: "Edxplor",
       description:
-        "Google Drive-like system for resource management with nested folders, file sharing, and access control using AWS S3.",
-      image: "/projects/project3.png",
-      tags: ["Node.js", "MongoDB", "AWS S3", "Express.js", "React"],
-      demoUrl: "#",
+        "Ed-tech platform where students can easily browse the colleges and universities of nepal, look at the courses and compare between the universities. ",
+      image: "/projects/edxplor.png",
+      tags: ["Typescript", "Nest", "PostgreSQL", "AWS", "Docker", "TypeORM"],
+      demoUrl: "https://edxplor.com/",
       company: "Rivia Infosys",
     },
   ],
@@ -46,37 +55,37 @@ const projects = {
       title: "Open-ML",
       description:
         "A no-code machine learning platform enabling users to upload datasets, preprocess data, train models, and visualize results without coding expertise.",
-      image: "/projects/project1.png",
+      image: "/projects/openml.png",
       tags: [
-        "React 19",
+        "React",
         "Node.js",
         "FastAPI",
         "PostgreSQL",
         "AWS S3",
         "Microservices",
       ],
-      demoUrl: "#",
-      githubUrl: "https://github.com/pokharel-nishan/open-ml",
+      demoUrl: "https://open-ml.me",
+      githubUrl: "https://github.com/pokharel-nishan",
     },
     {
       id: 5,
-      title: "E-commerce",
+      title: "Personalized Chatbot",
       description:
-        "Modern, responsive portfolio website built with React and TailwindCSS, featuring dark mode, animations, and a clean design.",
-      image: "/projects/project2.png",
-      tags: ["React", "TailwindCSS", "Vite", "Radix UI"],
+        "Personalized RAG chatbot where users can upload their own documents and query based on the information in the document.",
+      image: "/projects/chatbot.png",
+      tags: ["Typescript", "Express", "Node.js", "Langchain", "Langgraph"],
       demoUrl: "#",
-      githubUrl: "https://github.com/pokharel-nishan/portfolio",
+      githubUrl: "https://github.com/pokharel-nishan",
     },
     {
       id: 6,
       title: "Finance Tracker",
       description:
-        "Educational platform with advanced features including nested bucket management for exam questions and bulk data processing capabilities.",
-      image: "/projects/project2.png",
-      tags: ["React", "Node.js", "GraphQL", "gRPC", "Material UI"],
+        "Desktop application for tracking daily finance including income, expenses, loan and any other day-to-day operation. Offers dynamic dashboard for viewing the summary of finance.",
+      image: "/projects/financetracker.png",
+      tags: ["C#", ".NET", "Blazor", "MudBlazor"],
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/pokharel-nishan/finance-tracker",
       company: "Innovate Tech",
     },
   ],
@@ -180,15 +189,6 @@ export const ProjectsSection = () => {
           solutions.
         </p>
 
-        {/* Professional Projects */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-            <Briefcase className="w-6 h-6 text-primary" />
-            Professional Work
-          </h3>
-          <ProjectGrid projects={projects.professional} showCompany={true} />
-        </div>
-
         {/* Personal Projects */}
         <div className="mb-12">
           <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
@@ -196,6 +196,15 @@ export const ProjectsSection = () => {
             Personal Projects
           </h3>
           <ProjectGrid projects={projects.personal} />
+        </div>
+
+        {/* Professional Projects */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+            <Briefcase className="w-6 h-6 text-primary" />
+            Professional Work
+          </h3>
+          <ProjectGrid projects={projects.professional} showCompany={true} />
         </div>
 
         <div className="text-center">
