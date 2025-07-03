@@ -115,10 +115,9 @@ export const ContactSection = () => {
             <div className="bg-card p-6 rounded-lg">
               <h4 className="font-medium mb-2">Building with Purpose</h4>
               <p className="text-muted-foreground">
-                Coding, to me, is more than a skill—it’s a way to create
-                meaningful impact. I enjoy diving into new technologies,
-                refining architectures, and pushing the boundaries of what’s
-                possible through clean, thoughtful engineering.
+                I enjoy diving into new technologies, refining architectures,
+                and pushing the boundaries of what’s possible through clean,
+                thoughtful engineering.
               </p>
             </div>
           </div>
